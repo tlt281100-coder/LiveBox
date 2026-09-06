@@ -1,53 +1,46 @@
-## 直播盒子
+# LiveBox 精简版
 
-安安静静看直播，不要被礼物和各种诱导消费迷惑，冷静冷静冷静，商品和礼物也不一定非买不可，静静地看人生百态不也是一种享受。软件原理学习研究相关文章我已发布到我的博客上面，欢迎参观我的博客：  
-[CSDN 博客：](https://blog.csdn.net/weixin_44786530?spm=1000.2115.3001.5343) https://blog.csdn.net/weixin_44786530?spm=1000.2115.3001.5343
+一个深色简洁风格的直播观看工具：粘贴直播间地址即可看直播，同时显示当前在线人数与实时消息。
 
-[掘金博客：](https://juejin.cn/user/70007368988926)https://juejin.cn/user/70007368988926
+## 功能
 
-## 功能介绍
+- 首页只保留地址输入框，回车或点按钮即可进入直播
+- 直播画面 + 实时在线人数
+- 右侧实时消息栏（支持聊天评论，也可在设置中开启礼物/点赞/关注/进场）
+- 顶栏一键收起评论栏，画面自动放大
+- 清晰度切换（蓝光/高清/标清/流畅，取决于直播间实际提供的清晰度）
+- 画面上方展示主播头像、昵称、直播间简介与粉丝数
+- 深色界面，无礼物消费、无广告、无录制推送等多余功能
 
-可以获取直播视频和主播头像和昵称，直播聊天弹幕内容，但是屏蔽刷礼物功能，禁止刷礼物禁止消费，理性看播，看紧口袋。
-windows/mac/linux 下载地址：https://github.com/Sjj1024/LiveBox/releases
+## 技术栈
 
-下载说明：
-![alt text](./analysis/down.png)
+- 前端：Vue 3 + Vite
+- 桌面框架：Tauri（Rust）
+- 播放器：DPlayer（HLS / FLV）
 
-## 常见问题
+## 本地运行
 
-mac 电脑提示：已损坏,无法打开,你应该将它移到废纸篓，执行下面这条命名即可解决：
+需要 Node.js 20+、pnpm 或 npm，以及 Tauri 所需的 Rust 环境。
 
-```
-sudo xattr -r -d com.apple.quarantine /Applications/LiveBox.app
-```
-
-## 编译操作
-
-打 tag 发布到 github 的 action 打包全平台的安装程序。
-例如：
-
-```
-git tag v1.0.0
-git push --tag
-
-查看tag:
-git tag
-
-删除tag:
-git tag -d v1.0.0
-git push --delete origin v1.0.0
+```bash
+npm install
+npm run dev
 ```
 
-## 界面介绍
+开发调试桌面程序：
 
-![alt text](./analysis/image-6.png)
-![alt text](./analysis/image-7.png)
+```bash
+npm run tauri dev
+```
 
-## 赞助
+编译 Windows 可执行文件：
 
-开源不易, 有了您的赞助, 我们会做的更好~
-![alt text](./analysis/pay.png)
+```bash
+npm run tauri build
+```
 
-## TODO
+> 本仓库功能仅用于个人学习与技术研究，请遵守抖音平台的相关规则，不要用于批量采集或任何不当用途。
 
-1. 增加登录功能, 一个窗口登录，其他窗口免登录
+## 说明
+
+本项目在原开源项目 [Sjj1024/LiveBox](https://github.com/Sjj1024/LiveBox) 基础上重构了界面与功能。

@@ -2,7 +2,7 @@
 name = "livebox"
 version = "0.7.0"
 description = "A Live Box for Live"
-authors = ["you"]
+authors = ["tlt281100-coder"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
