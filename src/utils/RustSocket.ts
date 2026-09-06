@@ -69,6 +69,14 @@ class SocketCli {
         }, this.heartbeatInterval)
     }
 
+    // 停止心跳
+    stopHeartbeat() {
+        if (this.heartbeatTimer) {
+            clearInterval(this.heartbeatTimer)
+            this.heartbeatTimer = null
+        }
+    }
+
     // 发送消息
     send(data: any) {
         // console.log('WebSocket is send:', data)
@@ -86,6 +94,7 @@ class SocketCli {
 
     // 断开连接
     disconnect() {
+        this.stopHeartbeat()
         if (this.ws) {
             this.ws.disconnect()
         }

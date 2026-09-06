@@ -1,4 +1,3 @@
-/* 把我们所有标签的内外边距清零 */
 * {
     margin: 0;
     padding: 0;
@@ -6,45 +5,49 @@
 }
 
 html,
-body {
-    width: 100%;
-    height: 100%;
-}
-
+body,
 #app {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
-/* em 和 i 斜体的文字不倾斜 */
+body {
+    background: #0e1013;
+    color: #eef1f6;
+    font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
 em,
 i {
     font-style: normal;
 }
-/* 去掉li 的小圆点 */
-li {
+
+ul,
+ol {
     list-style: none;
 }
 
-img {
-    /* border 0 照顾低版本浏览器 如果 图片外面包含了链接会有边框的问题 */
+button {
+    font: inherit;
+    color: inherit;
     border: 0;
-    /* 取消图片底侧有空白缝隙的问题 */
+    cursor: pointer;
+    background: none;
+}
+
+input,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+img {
+    border: 0;
     vertical-align: middle;
 }
 
-:root {
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    color: #0f0f0f;
-    background-color: #f6f6f6;
-    /* font-synthesis: none; */
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-}
-
-/* 播放器菜单隐藏 */
 .dplayer-menu {
     display: none !important;
 }

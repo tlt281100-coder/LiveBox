@@ -1,6 +1,6 @@
 [package]
 name = "livebox"
-version = "0.0.2"
+version = "0.7.0"
 description = "A Live Box for Live"
 authors = ["you"]
 edition = "2021"

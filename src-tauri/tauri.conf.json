@@ -1,14 +1,14 @@
 {
     "build": {
-        "beforeDevCommand": "pnpm dev",
-        "beforeBuildCommand": "pnpm build",
+        "beforeDevCommand": "npm run dev",
+        "beforeBuildCommand": "npm run build",
         "devPath": "http://localhost:1420",
         "distDir": "../dist",
         "withGlobalTauri": true
     },
     "package": {
         "productName": "LiveBox",
-        "version": "0.0.3"
+        "version": "0.7.0"
     },
     "tauri": {
         "allowlist": {
@@ -24,9 +24,12 @@
         },
         "windows": [
             {
-                "title": "Livebox",
-                "width": 900,
-                "height": 600
+                "title": "LiveBox 精简版",
+                "width": 1280,
+                "height": 800,
+                "minWidth": 900,
+                "minHeight": 600,
+                "resizable": true
             }
         ],
         "security": {
@@ -41,8 +44,8 @@
         },
         "bundle": {
             "active": true,
-            "targets": "all",
-            "identifier": "com.live.box",
+            "targets": "nsis",
+            "identifier": "local.livebox.clean",
             "icon": [
                 "icons/32x32.png",
                 "icons/128x128.png",
