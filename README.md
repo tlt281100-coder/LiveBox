@@ -2,6 +2,16 @@
 
 一个深色简洁风格的直播观看工具：粘贴直播间地址即可看直播，同时显示当前在线人数与实时消息。
 
+## 直接使用（普通用户）
+
+去本仓库右侧的 Releases 页面下载最新版 `LiveBox.exe`，解压后双击即可运行，无需安装其他环境。
+
+使用步骤：
+
+1. 打开程序，在首页粘贴抖音直播间地址，例如 `https://live.douyin.com/123456`
+2. 点「进入直播」
+3. 观看直播画面，同时查看在线人数、实时消息和主播信息
+
 ## 功能
 
 - 首页只保留地址输入框，回车或点按钮即可进入直播
@@ -12,32 +22,23 @@
 - 画面上方展示主播头像、昵称、直播间简介与粉丝数
 - 深色界面，无礼物消费、无广告、无录制推送等多余功能
 
+## 开发者使用（源码）
+
+需要 Node.js 20+ 和 Tauri 所需的 Rust 环境。
+
+```bash
+git clone https://github.com/tlt281100-coder/LiveBox.git
+cd LiveBox
+npm install
+npm run tauri dev        # 开发调试
+npm run tauri build      # 编译成 exe
+```
+
 ## 技术栈
 
 - 前端：Vue 3 + Vite
 - 桌面框架：Tauri（Rust）
 - 播放器：DPlayer（HLS / FLV）
-
-## 本地运行
-
-需要 Node.js 20+、pnpm 或 npm，以及 Tauri 所需的 Rust 环境。
-
-```bash
-npm install
-npm run dev
-```
-
-开发调试桌面程序：
-
-```bash
-npm run tauri dev
-```
-
-编译 Windows 可执行文件：
-
-```bash
-npm run tauri build
-```
 
 > 本仓库功能仅用于个人学习与技术研究，请遵守抖音平台的相关规则，不要用于批量采集或任何不当用途。
 
